@@ -10,7 +10,7 @@ npm install
 
 ## Usage
 
-In your component import the following
+In App.vue file we import the RecordVideoButton component
 
 ```vue
 <script>
@@ -19,11 +19,11 @@ export default {
   name: "App",
   data: function() {
     return {
-      videos: [],
+      videos: [], //initial state used to get recorded or selected videos
     };
   },
   components: {
-    RecordVideoButton,
+    RecordVideoButton, //our component
   },
   methods: {
     handleResponse: function({ success, data, message }) {
@@ -41,7 +41,7 @@ export default {
 </script>
 ```
 
-In your template copy & paste the following
+In App.vue file template we add the component with props
 
 ```vue
 <template>
