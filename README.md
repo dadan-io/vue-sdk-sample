@@ -14,7 +14,7 @@ In your component import the following
 
 ```vue
 <script>
-import RecordVideoButton from "vue-dadan-extension";
+import RecordVideoButton from "vue-dadan-extension"; //Main component to import
 export default {
   name: "App",
   data: function() {
