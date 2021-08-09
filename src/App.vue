@@ -54,7 +54,7 @@
       </div>
       </template>
 <script>
-import RecordVideoButton from 'vue-dadan-extension';
+import RecordVideoButton from 'vue-dadan-sdk';
 export default {
   name : "App",
   data : function(){

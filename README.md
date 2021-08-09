@@ -1,6 +1,6 @@
-# Vue Dadan Extension Sample
+# Vue Dadan SDK Sample
 
-A lightweight Vue app that shows how to use [vue-dadan-extension](https://www.npmjs.com/package/vue-dadan-extension) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with Vue.
+A lightweight Vue app that shows how to use [vue-dadan-sdk](https://www.npmjs.com/package/vue-dadan-sdk) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with Vue.
 
 ## Install
 
@@ -14,7 +14,7 @@ In App.vue file we import the RecordVideoButton component
 
 ```vue
 <script>
-import RecordVideoButton from "vue-dadan-extension"; //Main component to import
+import RecordVideoButton from "vue-dadan-sdk"; //Main component to import
 export default {
   name: "App",
   data: function() {
