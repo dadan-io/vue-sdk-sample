@@ -12,56 +12,51 @@ npm install
 
 In your component import the following
 
-```javascript
+```vue
 <script>
-import RecordVideoButton from 'vue-dadan-extension';
+import RecordVideoButton from "vue-dadan-extension";
 export default {
-  name : "App",
-  data : function(){
-    return{
-      videos : []
-    }
+  name: "App",
+  data: function() {
+    return {
+      videos: [],
+    };
   },
-  components : {
-    RecordVideoButton
+  components: {
+    RecordVideoButton,
   },
-  methods : {
-    handleResponse : function({success, data, message}) {
+  methods: {
+    handleResponse: function({ success, data, message }) {
       if (success) {
         if (data) {
           this.videos = data;
-          }
-        } else {
-          this.videos = [];
-          console.log(message);
         }
-    }
-  }
-}
+      } else {
+        this.videos = [];
+        console.log(message);
+      }
+    },
+  },
+};
 </script>
 ```
 
-In your component copy & paste the following
+In your template copy & paste the following
 
-```javascript
-function YourComponent() {
-  const [videos, setVideos] = useState([]);
-  return (
-    <>
-      <RecordVideoButton
-        showSvg={true}
-        title="Select Video"
-        copyToClipboard={true}
-        showPreview={true}
-        type="select"
-        buttonClass="dd__record__button__default__class"
-        buttonStyle={{}}
-        onFailure={handleResponse}
-        onSuccess={handleResponse}
-      />
-    </>
-  );
-}
+```vue
+<template>
+  <RecordVideoButton
+    title="Select Video"
+    v-bind:showSvg="true"
+    v-bind:showPreview="true"
+    v-bind:copyToClipboard="true"
+    buttonClass=""
+    buttonStyle=""
+    type="select"
+    @onFailure="handleResponse"
+    @onSuccess="handleResponse"
+  />
+</template>
 ```
 
 the handleResponse function , is a callback function which accept object with three parameters
@@ -72,10 +67,10 @@ function handleResponse({ success, data, message }) {
     // only false when user close extension
     if (data) {
       // represnts the selected videos , or recorded video object after stop recording
-      setVideos(data);
+      this.videos = data;
     }
   } else {
-    setVideos([]);
+    this.videos = [];
     console.error(message); //User Closed Extension
   }
 }
