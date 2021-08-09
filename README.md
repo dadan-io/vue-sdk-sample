@@ -13,8 +13,32 @@ npm install
 In your component import the following
 
 ```javascript
-import React, { useState } from "react";
-import { RecordVideoButton } from "react-dadan-extension";
+<script>
+import RecordVideoButton from 'vue-dadan-extension';
+export default {
+  name : "App",
+  data : function(){
+    return{
+      videos : []
+    }
+  },
+  components : {
+    RecordVideoButton
+  },
+  methods : {
+    handleResponse : function({success, data, message}) {
+      if (success) {
+        if (data) {
+          this.videos = data;
+          }
+        } else {
+          this.videos = [];
+          console.log(message);
+        }
+    }
+  }
+}
+</script>
 ```
 
 In your component copy & paste the following
