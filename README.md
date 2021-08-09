@@ -59,10 +59,10 @@ In your template copy & paste the following
 </template>
 ```
 
-the handleResponse function , is a callback function which accept object with three parameters
+the handleResponse function in Methods , is a callback function which accept object with three parameters
 
 ```javascript
-function handleResponse({ success, data, message }) {
+handleResponse : function({ success, data, message }) {
   if (success) {
     // only false when user close extension
     if (data) {
